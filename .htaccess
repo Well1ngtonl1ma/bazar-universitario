@@ -1,0 +1,20 @@
+# =============================================================
+# Proteção para o XAMPP, onde a pasta INTEIRA do projeto fica dentro
+# do htdocs. Sem isto, alguém poderia baixar sql/dados_demo.sql,
+# README.md etc. em http://localhost/bazar-universitario/sql/...
+#
+# Só a pasta public/ é acessível. No Google Cloud isto nem é usado,
+# porque o DocumentRoot do Apache já aponta direto para public/.
+# =============================================================
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # /bazar-universitario/  ->  /bazar-universitario/public/
+    RewriteRule ^$ public/ [R=302,L]
+
+    # Qualquer coisa fora de public/ -> 403 Proibido
+    RewriteRule ^(?!public(/|$)) - [F,L]
+</IfModule>
+
+Options -Indexes

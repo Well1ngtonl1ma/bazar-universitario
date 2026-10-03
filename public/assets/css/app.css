@@ -1,0 +1,153 @@
+/* =============================================================
+   Bazar Universitário - tema UNAERP sobre o Bootstrap 5
+   Azul marinho #0b3168 | Amarelo ouro #f4b41a | Branco #ffffff
+   ============================================================= */
+
+:root {
+    --bazar-azul: #0b3168;
+    --bazar-azul-escuro: #082449;
+    --bazar-ouro: #f4b41a;
+    --bazar-ouro-escuro: #d99c0b;
+    --bazar-fundo: #f3f5f9;
+}
+
+body {
+    background-color: var(--bazar-fundo);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+main { flex: 1; }
+
+/* ---------- Navbar e rodapé ---------- */
+.navbar-bazar {
+    background-color: var(--bazar-azul);
+    border-bottom: 4px solid var(--bazar-ouro);
+}
+.navbar-bazar .navbar-brand,
+.navbar-bazar .nav-link { color: #fff; }
+.navbar-bazar .nav-link:hover,
+.navbar-bazar .nav-link.active { color: var(--bazar-ouro); }
+.navbar-bazar .navbar-toggler { border-color: rgba(255, 255, 255, .5); }
+.navbar-bazar .navbar-toggler-icon { filter: invert(1); }
+.brand-destaque { color: var(--bazar-ouro); }
+
+.rodape-bazar {
+    background-color: var(--bazar-azul);
+    border-top: 4px solid var(--bazar-ouro);
+}
+
+.faixa-azul {
+    background: linear-gradient(135deg, #0b3168 0%, #134a94 100%);
+}
+
+/* ---------- Botões ---------- */
+.btn-bazar {
+    background-color: var(--bazar-azul);
+    border-color: var(--bazar-azul);
+    color: #fff;
+    font-weight: 600;
+}
+.btn-bazar:hover, .btn-bazar:focus {
+    background-color: var(--bazar-azul-escuro);
+    border-color: var(--bazar-ouro);
+    color: var(--bazar-ouro);
+}
+.btn-ouro {
+    background-color: var(--bazar-ouro);
+    border-color: var(--bazar-ouro);
+    color: var(--bazar-azul);
+    font-weight: 600;
+}
+.btn-ouro:hover, .btn-ouro:focus {
+    background-color: var(--bazar-ouro-escuro);
+    border-color: var(--bazar-ouro-escuro);
+    color: var(--bazar-azul);
+}
+
+/* ---------- Badges e texto ---------- */
+.badge-ouro { background-color: var(--bazar-ouro); color: var(--bazar-azul); }
+.badge-azul { background-color: var(--bazar-azul); color: #fff; }
+.text-azul  { color: var(--bazar-azul); }
+
+/* ---------- Cards ---------- */
+.card-bazar {
+    background: #fff;
+    border: none;
+    border-top: 4px solid var(--bazar-azul);
+    border-radius: .75rem;
+    box-shadow: 0 .25rem 1rem rgba(11, 49, 104, .08);
+}
+.card-bazar.destaque { border-top-color: var(--bazar-ouro); }
+
+/* ---------- Filtro da vitrine ---------- */
+.filtro-categoria .btn { border-radius: 2rem; }
+.btn-filtro {
+    background: #fff;
+    border: 1px solid #ced6e3;
+    color: var(--bazar-azul);
+}
+.btn-filtro:hover { border-color: var(--bazar-azul); color: var(--bazar-azul); }
+.btn-filtro.ativo {
+    background: var(--bazar-azul);
+    border-color: var(--bazar-azul);
+    color: #fff;
+}
+
+/* ---------- Cards de item com foto ---------- */
+.card-item { overflow: hidden; transition: transform .15s ease, box-shadow .15s ease; }
+.card-item:hover { transform: translateY(-3px); box-shadow: 0 .5rem 1.5rem rgba(11, 49, 104, .15); }
+.card-item .card-title { color: var(--bazar-azul); }
+.card-item .foto-wrapper { position: relative; }
+.card-item .foto-wrapper .badge { position: absolute; top: .75rem; right: .75rem; }
+
+.foto-item {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;          /* corta sem distorcer */
+    background: #eef1f6;
+}
+.foto-detalhe {
+    width: 100%;
+    max-height: 460px;
+    object-fit: contain;        /* mostra a foto inteira */
+    background: #eef1f6;
+    border-radius: .75rem;
+}
+.foto-miniatura {
+    width: 56px;
+    height: 56px;
+    object-fit: cover;
+    border-radius: .5rem;
+    background: #eef1f6;
+}
+
+/* ---------- Upload com pré-visualização ---------- */
+.preview-upload {
+    width: 100%;
+    max-width: 320px;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: .75rem;
+    border: 2px dashed #ced6e3;
+    background: #f8f9fb;
+}
+
+/* ---------- Painel (dashboard) ---------- */
+.kpi {
+    border-left: 5px solid var(--bazar-azul);
+}
+.kpi.kpi-ouro    { border-left-color: var(--bazar-ouro); }
+.kpi.kpi-sucesso { border-left-color: #198754; }
+.kpi.kpi-cinza   { border-left-color: #6c757d; }
+.kpi .kpi-valor  { font-size: 2.2rem; font-weight: 700; line-height: 1; color: var(--bazar-azul); }
+.kpi .kpi-icone  { font-size: 1.8rem; opacity: .35; }
+
+.nav-tabs .nav-link { color: var(--bazar-azul); }
+.nav-tabs .nav-link.active { font-weight: 600; border-top: 3px solid var(--bazar-ouro); }
+
+/* ---------- Formulários ---------- */
+.form-control:focus, .form-select:focus {
+    border-color: var(--bazar-azul);
+    box-shadow: 0 0 0 .2rem rgba(11, 49, 104, .2);
+}

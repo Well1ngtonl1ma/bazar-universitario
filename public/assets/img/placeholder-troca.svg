@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-label="Item para troca sem foto">
+  <rect width="800" height="600" fill="#e8eef8"/>
+  <circle cx="400" cy="270" r="150" fill="#0b3168" opacity="0.10"/>
+  <!-- setas de troca -->
+  <path d="M280 230 H500" stroke="#0b3168" stroke-width="26" stroke-linecap="round"/>
+  <path d="M470 185 L525 230 L470 275" fill="none" stroke="#0b3168" stroke-width="26" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M520 330 H300" stroke="#f4b41a" stroke-width="26" stroke-linecap="round"/>
+  <path d="M330 285 L275 330 L330 375" fill="none" stroke="#f4b41a" stroke-width="26" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="400" y="470" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="40" font-weight="700" fill="#0b3168">Troca</text>
+  <text x="400" y="515" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="24" fill="#5b6b85">sem foto</text>
+</svg>

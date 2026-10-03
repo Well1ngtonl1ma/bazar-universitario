@@ -1,0 +1,30 @@
+# =============================================================
+# Pasta de fotos enviadas pelos usuários.
+# Segunda linha de defesa: mesmo que um script chegasse aqui,
+# o Apache NÃO o executa e só serve imagens.
+# =============================================================
+
+# Sem listagem de diretório
+Options -Indexes -ExecCGI
+
+# Desliga o PHP nesta pasta (mod_php: XAMPP e Ubuntu com libapache2-mod-php)
+<IfModule mod_php.c>
+    php_flag engine off
+</IfModule>
+<IfModule mod_php7.c>
+    php_flag engine off
+</IfModule>
+<IfModule php_module>
+    php_flag engine off
+</IfModule>
+
+# Nega tudo e libera só as extensões de imagem que o sistema gera
+Require all denied
+<FilesMatch "\.(jpg|png|webp)$">
+    Require all granted
+</FilesMatch>
+
+# Impede o navegador de "adivinhar" outro tipo de conteúdo
+<IfModule mod_headers.c>
+    Header set X-Content-Type-Options "nosniff"
+</IfModule>

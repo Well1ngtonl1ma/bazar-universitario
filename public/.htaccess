@@ -1,0 +1,17 @@
+# Front Controller: toda requisição que não for um arquivo/pasta real
+# é enviada para index.php, mantendo a query string original (QSA).
+
+Options -Indexes
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Arquivos e diretórios existentes (CSS, imagens, uploads) são servidos diretamente
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+
+    # Qualquer outra URL vai para o index.php
+    # QSA = Query String Append (preserva ?pagina=2&busca=livro)
+    # L   = Last (para de processar outras regras)
+    RewriteRule ^ index.php [QSA,L]
+</IfModule>

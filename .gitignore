@@ -1,0 +1,12 @@
+# Fotos enviadas pelos usuários não vão para o Git
+public/uploads/*
+!public/uploads/.gitkeep
+!public/uploads/.htaccess
+
+# Sistema / editores
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*_backup*
+*.zip
